@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">upasana</string>
+    <string name="title_activity_main">upasana</string>
+    <string name="package_name">com.upasana.app</string>
+    <string name="custom_url_scheme">com.upasana.app</string>
+</resources>
