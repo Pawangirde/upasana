@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Card, Row, Col, Button, Form, Badge, ListGroup, ProgressBar } from "react-bootstrap";
 import { BsPerson, BsGear, BsBell, BsShield, BsHeart, BsBook, BsCalendar, BsTrophy } from "react-icons/bs";
-import { FaUserCircle, FaEdit } from "react-icons/fa";
+import {  FaEdit } from "react-icons/fa";
 import { useLanguage } from "../context/LanguageContext";
 import PageLayout from "../PageLayout";
 

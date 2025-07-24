@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, X, Download, Heart, Share2, ZoomIn } from "lucide-react";
+import { Image, X, Download, Heart, Share2 } from "lucide-react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 
 const dummyData = [

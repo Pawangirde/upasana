@@ -1,4 +1,4 @@
-import Navbar from "./component/Navbar";
+// import Navbar from "./component/Navbar";
 
 const PageLayout = ({ children }) => (
   <>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
-import { BsEye, BsEyeSlash, BsGoogle, BsFacebook, BsApple } from 'react-icons/bs';
+import { BsEye, BsEyeSlash, BsGoogle, BsApple } from 'react-icons/bs';
 import { FaOm } from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
 
