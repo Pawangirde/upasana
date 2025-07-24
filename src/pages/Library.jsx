@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container, Card, Row, Col, Badge, Button, Form, InputGroup } from "react-bootstrap";
 import { BsSearch, BsBook, BsPlayCircle, BsDownload, BsHeart, BsHeartFill } from "react-icons/bs";
-import { useLanguage } from "../context/LanguageContext";
+// import { useLanguage } from "../context/LanguageContext";
 import PageLayout from "../PageLayout";
 
 export default function Library() {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [favorites, setFavorites] = useState([1, 3]);

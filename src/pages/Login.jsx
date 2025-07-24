@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 import { BsEye, BsEyeSlash, BsGoogle, BsApple } from 'react-icons/bs';
 import { FaOm } from 'react-icons/fa';
-import { useLanguage } from '../context/LanguageContext';
+// import { useLanguage } from '../context/LanguageContext';
 
 export default function Login() {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
