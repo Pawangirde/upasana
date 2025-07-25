@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaBell, FaMoon, FaSun, FaSignOutAlt } from "react-icons/fa";
+import { FaUser, FaBell,FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PageLayout from "../PageLayout";
 export default function Setting({ toggleTheme, darkMode }) {
