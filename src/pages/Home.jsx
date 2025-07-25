@@ -1,95 +1,109 @@
-import {  FaVolumeUp } from "react-icons/fa";
-// import Container from "react-bootstrap/Container";
+import { FaVolumeUp, FaCalendarAlt, FaUsers, FaPray } from "react-icons/fa";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-
+import Library from "./Library";
+// import About from "./About";
 export default function HomePage({ toggleTheme, darkMode }) {
   const itemClass = darkMode
-    ? 'list-group-item bg-dark text-white border-secondary'
-    : 'list-group-item';
+    ? "bg-dark text-white border-secondary"
+    : "bg-white text-dark";
 
   return (
-    <div className={`container p-4 mt-4 ${itemClass}`}>
+    <div className={`container py-5 ${darkMode ? "bg-dark" : "bg-light"}`}>
       {/* Upasana Card */}
-      <Card
-        className={`upasana-card position-relative overflow-hidden ${itemClass} mt-4`}
-      >
+      <Card className={`upasana-card position-relative border-0 shadow-lg mb-5`}>
         <Card.Img
           variant="top"
-          src="https://images.unsplash.com/photo-1622279486466-e0e3bfdd0a01?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhpbmR1JTIwZ29kfGVufDB8fDB8fHww"
+          src="https://images.unsplash.com/photo-1622279486466-e0e3bfdd0a01?w=1200&auto=format&fit=crop&q=80"
           alt="Current Upasana"
           className="upasana-image"
         />
-        <div className="live-badge">LIVE</div>
-        <div className="text-overlay shadow-lg">
-          <h2 className="upasana-title">Current Upāsanā</h2>
-          <p className="upasana-subtitle">Akhanda Parayan Saptah - Day 3</p>
+        <div className="live-badge bg-danger text-white px-3 py-1 rounded-pill position-absolute top-3 start-3">
+          LIVE
+        </div>
+        <div className="text-overlay shadow-lg p-4">
+          <h2 className="upasana-title text-white fw-bold">Current Upāsanā</h2>
+          <p className="upasana-subtitle text-light fs-5">Akhanda Parayan Saptah - Day 3</p>
         </div>
       </Card>
 
       {/* Quick Access */}
-      <div className="text-center mt-4">
-        <h3 className="common-heading">Quick Access</h3>
+      <div className="text-center mb-4">
+        <h3 className="fw-bold text-primary mb-3">Quick Access</h3>
+        <Row className="g-3 justify-content-center">
+          {["On Going", "Upcoming", "Completed"].map((label, index) => (
+            <Col key={index} xs={12} md={4}>
+              <Card className={`h-100 border-0 shadow ${itemClass}`}>
+                <Card.Img
+                  variant="top"
+                  src="https://santgajananbhaktparivar.com/public/img/brand/home.jpeg"
+                  className="rounded-top"
+                />
+                <Card.Body className="text-center">
+                  <Card.Title className="fw-bold">{label}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
 
-      <Row className="gap-2 mt-2 justify-content-center">
-        {["On Going", "Upcoming", "Completed"].map((label, index) => (
-          <Col
-            key={index}
-            className={`text-center p-2 rounded shadow ${itemClass}`}
-          >
-            <img
-              src="https://santgajananbhaktparivar.com/public/img/brand/home.jpeg"
-              alt={label}
-              className="w-100 h-75 rounded"
-            />
-            <div className="mt-4">
-              <span className="fw-bold">{label}</span>
-            </div>
-          </Col>
-        ))}
-      </Row>
-
       {/* Global Mantra Count */}
-      <div className="mt-4">
-        <h3
-          className={`common-heading`}
-        >
-          Global Mantra Count
-        </h3>
-
-        <div
-          className={`global-mantra-card global-mantra-card d-flex justify-content-between align-items-center p-3 rounded shadow ${itemClass}`}
-        >
+      <div className="mt-5">
+        <h3 className="fw-bold text-primary mb-3">Global Mantra Count</h3>
+        <Card className={`p-4 d-flex flex-row justify-content-between align-items-center shadow ${itemClass}`}>
           <div>
-            <span className="mantra-text-block text-muted">
-              Total Mantras Chanted
-            </span>
-            <span className="mantra-count">1,234,567,890</span>
+            <span className="d-block text-muted">Total Mantras Chanted</span>
+            <span className="fs-2 fw-bold text-success">1,234,567,890</span>
           </div>
-          <FaVolumeUp className="fs-3 text-warning" />
-        </div>
+          <FaVolumeUp className="fs-1 text-warning" />
+        </Card>
       </div>
 
       {/* Devotional Statistics */}
-      <h3 className={`common-heading mt-4`}>
-        Devotional Statistics
-      </h3>
-      <div className="row mt-2">
-        <div className="col-6">
-          <div className={`rounded shadow text-center p-3 ${itemClass}`}>
-            <p className="text-sm fw-bold text-muted mb-1">Total Followers</p>
-            <p className="fs-4 fw-bold">187,456</p>
-          </div>
-        </div>
-        <div className="col-6">
-          <div className={`rounded shadow text-center p-3 ${itemClass}`}>
-            <p className="text-sm fw-bold text-muted mb-1">Total Upāsanās</p>
-            <p className="fs-4 fw-bold">789,819</p>
-          </div>
-        </div>
+      <div className="mt-5">
+        <h3 className="fw-bold text-primary mb-3">Devotional Statistics</h3>
+        <Row className="g-3">
+          <Col xs={6}>
+            <Card className={`text-center p-3 shadow ${itemClass}`}>
+              <FaUsers className="fs-1 text-primary mb-2" />
+              <p className="fw-bold mb-1 text-muted">Total Followers</p>
+              <p className="fs-4 fw-bold">187,456</p>
+            </Card>
+          </Col>
+          <Col xs={6}>
+            <Card className={`text-center p-3 shadow ${itemClass}`}>
+              <FaPray className="fs-1 text-success mb-2" />
+              <p className="fw-bold mb-1 text-muted">Total Upāsanās</p>
+              <p className="fs-4 fw-bold">789,819</p>
+            </Card>
+          </Col>
+        </Row>
       </div>
+
+      {/* New Upcoming Events Section */}
+      <div className="mt-5">
+        <h3 className="fw-bold text-primary mb-3">Upcoming Events</h3>
+        <Row className="g-3">
+          {[1, 2, 3].map((_, i) => (
+            <Col xs={12} md={4} key={i}>
+              <Card className={`border-0 shadow ${itemClass}`}>
+                <Card.Body>
+                  <FaCalendarAlt className="fs-2 text-danger mb-2" />
+                  <Card.Title>Event {i + 1}</Card.Title>
+                  <Card.Text>
+                    Join us for the spiritual event happening on{" "}
+                    <strong>10th August</strong>.
+                  </Card.Text>
+                  <button className="btn btn-outline-primary btn-sm">Learn More</button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+      <Library />
     </div>
   );
 }

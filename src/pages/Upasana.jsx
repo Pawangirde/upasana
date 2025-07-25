@@ -10,6 +10,7 @@ import {
   Alert,
   Card,
 } from "react-bootstrap";
+import PageLayout from "../PageLayout";
 
 const JoinUpasana = () => {
   const navigate = useNavigate();
@@ -78,101 +79,103 @@ const JoinUpasana = () => {
   }
 
   return (
-    <Container className="py-5">
-      <Row className="justify-content-center">
-        <Col md={6}>
-          <Card className="shadow mt-4 rounded">
-            <Card.Body>
-              <div className="text-center mb-4">
-                <div
-                  className="bg-light rounded-circle d-inline-flex justify-content-center align-items-center"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <span className="fs-2">🕉️</span>
-                </div>
-                <h2 className="mt-3">उपासना में जुड़ें</h2>
-                <p className="text-muted">
-                  गजानन महाराज की साप्ताहिक उपासना में भाग लें
-                </p>
-              </div>
-
-              <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                  <Form.Label>पूरा नाम *</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="आपका पूरा नाम दर्ज करें"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Label>मोबाइल नंबर *</Form.Label>
-                  <Form.Control
-                    type="tel"
-                    name="mobile"
-                    value={formData.mobile}
-                    onChange={handleInputChange}
-                    required
-                    pattern="[0-9]{10}"
-                    placeholder="10 अंकों का मोबाइल नंबर"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-3">
-                  <Form.Label>ईमेल (वैकल्पिक)</Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="आपका ईमेल पता"
-                  />
-                </Form.Group>
-
-                <Form.Group className="mb-4">
-                  <Form.Label>उपासना सप्ताह चुनें *</Form.Label>
-                  <Form.Select
-                    name="upasanaDate"
-                    value={formData.upasanaDate}
-                    onChange={handleInputChange}
-                    required
+    <PageLayout>
+      <Container className="py-5">
+        <Row className="justify-content-center">
+          <Col md={6}>
+            <Card className="shadow mt-4 rounded">
+              <Card.Body>
+                <div className="text-center mb-4">
+                  <div
+                    className="bg-light rounded-circle d-inline-flex justify-content-center align-items-center"
+                    style={{ width: 64, height: 64 }}
                   >
-                    <option value="2025-07-07">जुलाई 7-13, 2025</option>
-                    <option value="2025-07-14">जुलाई 14-20, 2025</option>
-                    <option value="2025-07-21">जुलाई 21-27, 2025</option>
-                  </Form.Select>
-                </Form.Group>
+                    <span className="fs-2">🕉️</span>
+                  </div>
+                  <h2 className="mt-3">उपासना में जुड़ें</h2>
+                  <p className="text-muted">
+                    गजानन महाराज की साप्ताहिक उपासना में भाग लें
+                  </p>
+                </div>
 
-                <Alert variant="info">
-                  <strong>📝 नोट:</strong>
-                  <ul className="mb-0 mt-2 ps-3">
-                    <li>प्रत्येक व्यक्ति को एक अध्याय आवंटित किया जाएगा</li>
-                    <li>दैनिक अध्याय पूरा करना आवश्यक है</li>
-                    <li>21 सदस्यों की टीम बनाई जाएगी</li>
-                  </ul>
-                </Alert>
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>पूरा नाम *</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      placeholder="आपका पूरा नाम दर्ज करें"
+                    />
+                  </Form.Group>
 
-                <Button
-                  type="submit"
-                  disabled={!formData.name || !formData.mobile}
-                  className="w-100 btn-primary"
-                >
-                  पंजीकरण करें
-                </Button>
-              </Form>
+                  <Form.Group className="mb-3">
+                    <Form.Label>मोबाइल नंबर *</Form.Label>
+                    <Form.Control
+                      type="tel"
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleInputChange}
+                      required
+                      pattern="[0-9]{10}"
+                      placeholder="10 अंकों का मोबाइल नंबर"
+                    />
+                  </Form.Group>
 
-              <p className="text-center mt-4 text-muted small">
-                पंजीकरण करके, आप नियम और शर्तों से सहमत हैं
-              </p>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+                  <Form.Group className="mb-3">
+                    <Form.Label>ईमेल (वैकल्पिक)</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="आपका ईमेल पता"
+                    />
+                  </Form.Group>
+
+                  <Form.Group className="mb-4">
+                    <Form.Label>उपासना सप्ताह चुनें *</Form.Label>
+                    <Form.Select
+                      name="upasanaDate"
+                      value={formData.upasanaDate}
+                      onChange={handleInputChange}
+                      required
+                    >
+                      <option value="2025-07-07">जुलाई 7-13, 2025</option>
+                      <option value="2025-07-14">जुलाई 14-20, 2025</option>
+                      <option value="2025-07-21">जुलाई 21-27, 2025</option>
+                    </Form.Select>
+                  </Form.Group>
+
+                  <Alert variant="info">
+                    <strong>📝 नोट:</strong>
+                    <ul className="mb-0 mt-2 ps-3">
+                      <li>प्रत्येक व्यक्ति को एक अध्याय आवंटित किया जाएगा</li>
+                      <li>दैनिक अध्याय पूरा करना आवश्यक है</li>
+                      <li>21 सदस्यों की टीम बनाई जाएगी</li>
+                    </ul>
+                  </Alert>
+
+                  <Button
+                    type="submit"
+                    disabled={!formData.name || !formData.mobile}
+                    className="w-100 btn-primary"
+                  >
+                    पंजीकरण करें
+                  </Button>
+                </Form>
+
+                <p className="text-center mt-4 text-muted small">
+                  पंजीकरण करके, आप नियम और शर्तों से सहमत हैं
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </PageLayout>
   );
 };
 

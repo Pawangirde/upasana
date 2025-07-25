@@ -1,11 +1,12 @@
 // src/pages/About.js
 import React from "react";
+import PageLayout from "../PageLayout";
 // import aboutImg from "../assets/gajanan-right.png"; // Add your image here
 
 export default function About() {
   return (
-    <div className="container py-4">
-      <div className="row">
+    <PageLayout>
+      <div className="container py-4 row">
         <div className="col-md-8 order-2 order-md-1">
           <h2 className="text-primary mb-4">
             संत गजानन भक्त परिवार आणि गजानन महाराजांच्या उपासना
@@ -57,6 +58,6 @@ export default function About() {
           />
         </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }

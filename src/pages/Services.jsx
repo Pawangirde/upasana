@@ -1,7 +1,8 @@
 import React from "react";
+import PageLayout from "../PageLayout";
 
 function Services() {
-  return <div>Pawan Girade</div>;
+  return <PageLayout>Pawan Girade</PageLayout>;
 }
 
 export default Services;

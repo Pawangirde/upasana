@@ -1,13 +1,6 @@
 // src/components/TopNavbar.js
 import React, { useState } from "react";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Offcanvas,
-  ListGroup,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Offcanvas, Button } from "react-bootstrap";
 import { FaUserCircle, FaBars } from "react-icons/fa";
 import {
   BsHouseDoorFill,
@@ -18,6 +11,7 @@ import {
   BsBell,
   BsCalendar,
   BsGlobe,
+  BsChevronRight,
 } from "react-icons/bs";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
@@ -31,13 +25,33 @@ export default function TopNavbar() {
   const handleToggleSidebar = () => setShowSidebar(!showSidebar);
 
   const navItems = [
-    { path: "/home", label: t("home"), icon: BsHouseDoorFill },
-    { path: "/upasana", label: t("join_upasana"), icon: BsCalendar },
-    { path: "/tasks", label: t("daily_tasks"), icon: BsCheck2Square },
-    { path: "/library", label: t("library"), icon: BsBook },
-    { path: "/settings", label: t("notifications"), icon: BsBell },
-    { path: "/gallery", label: t("gallery"), icon: BsImage },
-    { path: "/profile", label: t("profile"), icon: BsPerson },
+    {
+      path: "/home",
+      label: t("home"),
+      icon: BsHouseDoorFill,
+      color: "#f97316",
+    },
+    {
+      path: "/upasana",
+      label: t("join_upasana"),
+      icon: BsCalendar,
+      color: "#22c55e",
+    },
+    {
+      path: "/tasks",
+      label: t("daily_tasks"),
+      icon: BsCheck2Square,
+      color: "#3b82f6",
+    },
+    { path: "/library", label: t("library"), icon: BsBook, color: "#eab308" },
+    {
+      path: "/settings",
+      label: t("notifications"),
+      icon: BsBell,
+      color: "#ec4899",
+    },
+    { path: "/gallery", label: t("gallery"), icon: BsImage, color: "#06b6d4" },
+    { path: "/profile", label: t("profile"), icon: BsPerson, color: "#8b5cf6" },
   ];
 
   const languages = [
@@ -84,7 +98,6 @@ export default function TopNavbar() {
         show={showSidebar}
         onHide={handleToggleSidebar}
         placement="start"
-        // style={{ width: "300px" }}
       >
         <Offcanvas.Header
           closeButton
@@ -109,28 +122,77 @@ export default function TopNavbar() {
         </Offcanvas.Header>
 
         <Offcanvas.Body>
-          {/* Navigation */}
-          <ListGroup variant="flush" className="mb-4">
-            {navItems.map(({ path, label, icon: Icon }) => {
-              const isActive = location.pathname === path;
-              return (
-                <ListGroup.Item
-                  key={path}
-                  action
-                  onClick={() => {
-                    navigate(path);
-                    setShowSidebar(false);
-                  }}
-                  className={`d-flex align-items-center rounded gap-2 mb-1 ${
-                    isActive ? "active" : ""
-                  } custom-list-item`}
-                >
-                  <Icon size={18} className="me-2" />
-                  {label}
-                </ListGroup.Item>
-              );
-            })}
-          </ListGroup>
+          {/* Modern Navigation */}
+          <div className="mb-4">
+            <div className="d-grid gap-2">
+              {navItems.map(({ path, label, icon: Icon, color }) => {
+                const isActive = location.pathname === path;
+                return (
+                  <button
+                    key={path}
+                    className="btn text-start d-flex align-items-center justify-content-between p-3 border-0"
+                    onClick={() => {
+                      navigate(path);
+                      setShowSidebar(false);
+                    }}
+                    style={{
+                      background: isActive
+                        ? `linear-gradient(135deg, ${color}20, ${color}10)`
+                        : "transparent",
+                      borderRadius: "16px",
+                      transition: "all 0.3s ease",
+                      border: isActive
+                        ? `1px solid ${color}30`
+                        : "1px solid transparent",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background =
+                          "rgba(0, 0, 0, 0.05)";
+                        e.currentTarget.style.transform = "translateX(4px)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.transform = "translateX(0)";
+                      }
+                    }}
+                  >
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="d-flex align-items-center justify-content-center me-3"
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          background: isActive ? color : `${color}20`,
+                          borderRadius: "12px",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <Icon
+                          size={18}
+                          className={isActive ? "text-white" : ""}
+                          style={{ color: isActive ? "white" : color }}
+                        />
+                      </div>
+                      <span
+                        className={`fw-semibold ${
+                          isActive ? "text-dark" : "text-muted"
+                        }`}
+                      >
+                        {label}
+                      </span>
+                    </div>
+                    <BsChevronRight
+                      size={14}
+                      className={isActive ? "text-dark" : "text-muted"}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Language Switcher */}
           <div className="mb-3">

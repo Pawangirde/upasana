@@ -46,7 +46,6 @@ function App() {
               path="/home"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Home
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -60,7 +59,6 @@ function App() {
               path="/about"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <About
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -74,7 +72,6 @@ function App() {
               path="/services"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Services
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -88,7 +85,6 @@ function App() {
               path="/upasana"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Upasana
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -102,7 +98,6 @@ function App() {
               path="/tasks"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Tasks
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -116,7 +111,6 @@ function App() {
               path="/library"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Library
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -130,7 +124,6 @@ function App() {
               path="/settings"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Settings
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -144,7 +137,6 @@ function App() {
               path="/gallery"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Gallary
                       toggleTheme={() => setDarkMode(!darkMode)}
@@ -158,7 +150,6 @@ function App() {
               path="/profile"
               element={
                 <>
-                  <Navbar />
                   <div style={{ paddingBottom: "70px" }}>
                     <Profile
                       toggleTheme={() => setDarkMode(!darkMode)}

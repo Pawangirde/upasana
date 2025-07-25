@@ -1,8 +1,8 @@
-// import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar";
 
 const PageLayout = ({ children }) => (
   <>
-    {/* <Navbar /> */}
+    <Navbar />
     <div style={{ paddingTop: "80px" }}>
       {children}
     </div>

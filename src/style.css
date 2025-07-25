@@ -271,3 +271,53 @@ body.bg-dark .team-status-card {
     margin-bottom: 1rem;
   }
 }
+/* src/styles/modern-navbar.css */
+
+.modern-bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.modern-bottom-nav .nav-item {
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffffcc;
+  transition: all 0.3s ease;
+}
+
+.modern-bottom-nav .nav-item .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.modern-bottom-nav .nav-item.active .icon-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modern-bottom-nav .nav-item.active {
+  font-weight: bold;
+  color: #fff;
+}
+
+.modern-bottom-nav .nav-item:hover .icon-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+}
