@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./style.css";
 import { useEffect, useState } from "react";
-import Navbar from "./component/Navbar";
+// import Navbar from "./component/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
